@@ -125,3 +125,32 @@ header {
     border-color: green;
   }
 }
+
+//****FOOTER****/ //**** IF ELSE****/
+$textColor: #990000, #55004e, #0fa8a1, #121456, #64c217;
+footer {
+  $dark: 2;
+  p {
+    @if $dark==1 {
+      background-color: grey;
+    } @else if $dark==2 {
+      background-color: lightgreen;
+    } @else {
+      background-color: lightsalmon;
+    }
+    background-color: grey;
+  }
+
+  .social-icons {
+    display: flex;
+    height: 10rem;
+    @for $i from 1 through 5 {
+      .social#{$i} {
+        width: 20%;
+        background-color: lighten(rgb(11, 128, 229, 0.616), $i * 5);
+        font-size: $i * 1rem;
+        color: nth($textColor, $i);
+      }
+    }
+  }
+}
